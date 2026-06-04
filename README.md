@@ -55,8 +55,8 @@ Sistema **RAG (Retrieval Augmented Generation)** com frontend Angular que permit
 
 ## 📈 Resultados
 
-### Chat Interface com Citações
-![Chat](assets/screenshots/01-chat-interface.png)
+### Chat com Citações em Tempo Real
+![Oracle Chat](assets/screenshots/01-oracle-chat.png)
 
 ### Pipeline RAG
 ![RAG Pipeline](assets/screenshots/02-rag-pipeline.png)
