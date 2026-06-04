@@ -56,22 +56,18 @@ Sistema **RAG (Retrieval Augmented Generation)** com frontend Angular que permit
 ## 📈 Resultados
 
 ### Chat com Citações em Tempo Real
-![Oracle Chat](assets/screenshots/01-oracle-chat.png)
+![Visão Geral da Reforma](assets/screenshots/01-visao-geral-reforma.png)
 
 ### Pipeline RAG
-![RAG Pipeline](assets/screenshots/02-rag-pipeline.png)
+![Métricas de Confiança](assets/screenshots/02-metricas-confianca.png)
 
 ### Dashboard de Indexação
-![Indexing](assets/screenshots/03-indexing-dashboard.png)
+![Chat Inteligente](assets/screenshots/03-chat-inteligente.png)
 
 ### Visão Geral da Reforma Tributária
-![Tax Reform](assets/screenshots/04-tax-reform-overview.png)
+![Dashboard de Indexação](assets/screenshots/04-dashboard-indexacao.png)
 
-### Diagrama de Arquitetura
-![Architecture](assets/diagrams/05-architecture-diagram.png)
 
-### Métricas de Confiança
-![Metrics](assets/screenshots/06-confidence-metrics.png)
 
 > *Métricas baseadas em deployment em escritório de advocacia tributária de São Paulo.*
 
