@@ -1,0 +1,2 @@
+# Prototype only — no external dependencies required
+# Pure Python standard library
