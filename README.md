@@ -8,6 +8,10 @@
 
 ---
 
+*Como membro nomeado do Comitê Nacional de Reforma Tributária (CBS/IBS) da minha firma, concebi esta ferramenta de pesquisa para acelerar análises de impacto da reforma. Esta vitrine demonstra o domínio do problema e a abordagem — o sistema de produção é proprietário e confidencial.*
+
+---
+
 ## 🎯 O Problema de Negócio
 
 A **Reforma Tributária brasileira** (PEC 45/2019, promulgada em dezembro de 2023) é a maior mudança no sistema tributário nacional desde a Constituição de 1988. Ela substitui cinco impostos (ICMS, ISS, IPI, PIS, COFINS) por três novos:
@@ -41,15 +45,6 @@ Sistema **RAG (Retrieval Augmented Generation)** com frontend Angular que permit
 | **Multimodal** | Suporte a PDF, DOCX, HTML de sites oficiais | Todos os formatos de publicação |
 | **Fine-tuning** | Modelo ajustado para linguagem tributária brasileira | Precisão técnica superior |
 | **Exportação** | Respostas exportáveis para PDF e Word | Documentação de pareceres |
-
-### Tecnologia
-
-- **Frontend:** Angular 17.3 + TypeScript 5.4 + RxJS 7.8 + Tailwind CSS
-- **Backend RAG:** Python 3.11 + LangChain + FAISS (vetorial local) + Sentence Transformers
-- **LLM:** Llama 3 (local via Ollama) — zero chamadas à nuvem
-- **Document Store:** SQLite + embeddings FAISS
-- **Fontes:** Crawlers oficiais (Planalto, Receita Federal, Senado)
-- **Containerização:** Docker para isolamento de ambientes
 
 ---
 
@@ -132,10 +127,23 @@ O sistema de produção é **proprietário, licenciado comercialmente e confiden
 
 ---
 
+<details>
+<summary><sub>Stack técnico (para avaliadores técnicos)</sub></summary>
+
+- **Frontend:** Angular 17.3 + TypeScript 5.4 + RxJS 7.8 + Tailwind CSS
+- **Backend RAG:** Python 3.11 + LangChain + FAISS (vetorial local) + Sentence Transformers
+- **LLM:** Llama 3 (local via Ollama) — zero chamadas à nuvem
+- **Document Store:** SQLite + embeddings FAISS
+- **Containerização:** Docker
+
+</details>
+
+---
+
 ## 📬 Contato
 
 **Fernando Xavier**  
-Finance Executive & AI Solutions Architect  
+Head of Accounting & Controlling · Finance Executive & Founder @ FX Studio AI  
 CRC · ACCA Cert IFR · FMVA (CFI) · MBA Engenharia de Soluções com IA (USP/Esalq, em andamento)  
 São Paulo, BR · PT / EN (C2) / ES (C1)  
 
