@@ -31,7 +31,7 @@
 
 **Problema:** Controller precisava responder rapidamente a perguntas do CFO sobre impacto da Reforma Tributária em cada subsidiária.
 
-**Solução:** Oracle com índice de PEC 45/2019 + Lei Complementar 214/2024 + alíquotas por setor.
+**Solução:** Oracle com índice de PEC 45/2019 + Lei Complementar 214/2025 + alíquotas por setor.
 
 **Resultado:**
 - Tempo de resposta a CFO: dias → minutos

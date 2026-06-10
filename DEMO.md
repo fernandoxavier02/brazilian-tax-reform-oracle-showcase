@@ -31,11 +31,11 @@ Todas as informações são fictícias e para fins demonstrativos. Não constitu
 > Usuário: "Qual a alíquota de IBS para serviços de saúde?"
 
 > Sistema:
-  De acordo com o Art. 15 da LC 214/2024 (fictícia):
+  De acordo com o Art. 15 da LC 214/2025 (conteúdo ilustrativo):
   "Os serviços de saúde, incluindo planos de saúde e atendimento
    hospitalar, estão sujeitos à alíquota reduzida de IBS de 5%.
   
-  Fonte: LC 214/2024, Art. 15, § 1º
+  Fonte: LC 214/2025, Art. 15, § 1º
   [Confiabilidade: Alta | Documento indexado em: 2024-01-15]"
 ```
 

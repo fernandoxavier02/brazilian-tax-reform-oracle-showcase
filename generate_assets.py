@@ -40,7 +40,7 @@ ax_b.set_facecolor('white')
 rect = FancyBboxPatch((0,0),1,1, boxstyle="round,pad=0.03", facecolor='white', edgecolor='#ddd', linewidth=1, transform=ax_b.transAxes)
 ax_b.add_patch(rect)
 ax_b.text(0.05, 0.88, 'Oracle', fontsize=8, color='#2E7D32', fontweight='bold', transform=ax_b.transAxes)
-ax_b.text(0.05, 0.68, 'De acordo com o Art. 15 da LC 214/2024:', fontsize=9, color='#1a1a1a', transform=ax_b.transAxes)
+ax_b.text(0.05, 0.68, 'De acordo com o Art. 15 da LC 214/2025:', fontsize=9, color='#1a1a1a', transform=ax_b.transAxes)
 ax_b.text(0.05, 0.52, '"Os serviços de saúde... estão sujeitos à', fontsize=9, color='#333', transform=ax_b.transAxes)
 ax_b.text(0.05, 0.42, 'alíquota reduzida de IBS de 5%."', fontsize=9, color='#333', transform=ax_b.transAxes)
 
@@ -49,7 +49,7 @@ ax_c = fig.add_axes([0.38, 0.40, 0.54, 0.08])
 ax_c.set_facecolor('#FFF8E1')
 rect = FancyBboxPatch((0,0),1,1, boxstyle="round,pad=0.02", facecolor='#FFF8E1', edgecolor='#FFB300', linewidth=1, transform=ax_c.transAxes)
 ax_c.add_patch(rect)
-ax_c.text(0.05, 0.5, 'Fonte: LC 214/2024, Art. 15, § 1º | Confiança: Alta | Indexado: 2024-01-15', fontsize=8, color='#E65100', transform=ax_c.transAxes, va='center')
+ax_c.text(0.05, 0.5, 'Fonte: LC 214/2025, Art. 15, § 1º | Confiança: Alta | Indexado: 2024-01-15', fontsize=8, color='#E65100', transform=ax_c.transAxes, va='center')
 ax_c.set_xlim(0,1); ax_c.set_ylim(0,1); ax_c.set_xticks([]); ax_c.set_yticks([]); ax_c.spines[:].set_visible(False)
 
 ax_b.set_xlim(0,1); ax_b.set_ylim(0,1); ax_b.set_xticks([]); ax_b.set_yticks([]); ax_b.spines[:].set_visible(False)
@@ -152,7 +152,7 @@ ax_t.text(0.05, 0.95, 'Últimos Documentos Indexados', fontsize=11, fontweight='
 
 rows = [
     ('Fonte', 'Documento', 'Tipo', 'Chunks', 'Status'),
-    ('Planalto', 'LC 214/2024', 'Lei Complementar', '245', 'Indexado'),
+    ('Planalto', 'LC 214/2025', 'Lei Complementar', '245', 'Indexado'),
     ('Receita Federal', 'Parecer COSIT 45/2024', 'Parecer', '18', 'Indexado'),
     ('Senado', 'PEC 45/2019', 'Emenda Constitucional', '312', 'Indexado'),
     ('STF', 'ADI 7.234', 'Ação Direta', '89', 'Indexado'),

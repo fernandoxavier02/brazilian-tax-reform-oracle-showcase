@@ -126,6 +126,8 @@ python main.py
 
 O sistema de produção é **proprietário, licenciado comercialmente e confidencial**. Este repositório contém apenas documentação arquitetural de alto nível, narrativas sanitizadas, protótipo educacional com dados 100% fictícios e imagens geradas sinteticamente.
 
+**Este projeto é uma demonstração técnica e educacional. As respostas geradas pelo sistema não constituem aconselhamento tributário, jurídico ou contábil.** Para decisões sobre a Reforma Tributária (CBS/IBS), consulte um profissional habilitado.
+
 **Proibida** a reprodução, distribuição ou uso comercial do código de produção.
 
 ---
@@ -134,7 +136,7 @@ O sistema de produção é **proprietário, licenciado comercialmente e confiden
 
 **Fernando Xavier**  
 Finance Executive & AI Solutions Architect  
-ACCA Cert IFR · CFI FMVA · MBA Corporate Finance (FGV, in progress)  
+CRC · ACCA Cert IFR · FMVA (CFI) · MBA Engenharia de Soluções com IA (USP/Esalq, em andamento)  
 São Paulo, BR · PT / EN (C2) / ES (C1)  
 
-[LinkedIn] · fernando@email.com · [fxstudioai.com](https://fxstudioai.com)
+[LinkedIn](https://linkedin.com/in/fernandoxavier02) · contato@fxstudioai.com · [fxstudioai.com](https://fxstudioai.com)
