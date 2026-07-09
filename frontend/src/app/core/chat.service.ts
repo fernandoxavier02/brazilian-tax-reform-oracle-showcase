@@ -102,7 +102,7 @@ export class ChatService {
         id: `o_${Date.now()}`,
         role: 'oracle',
         content:
-          'Nao encontrei trechos suficientemente relevantes no corpus sintetico indexado. Tente reformular com termos como IBS, CBS, IS, saude, exportacao, cesta basica ou credito.',
+          'Não encontrei trechos suficientemente relevantes no corpus sintético indexado. Tente reformular com termos como IBS, CBS, IS, saúde, exportação, cesta básica ou crédito.',
         timestamp: new Date(),
         confidence: 'Baixa',
         processingTimeMs,
@@ -124,7 +124,7 @@ export class ChatService {
       '',
       `"${article.text}"`,
       '',
-      `Este dispositivo trata especificamente de ${article.taxType}. Para uma analise completa, consulte tambem os artigos relacionados indexados.`,
+      `Este dispositivo trata especificamente de ${article.taxType}. Para uma análise completa, consulte também os artigos relacionados indexados.`,
     ].join('\n');
 
     return {
