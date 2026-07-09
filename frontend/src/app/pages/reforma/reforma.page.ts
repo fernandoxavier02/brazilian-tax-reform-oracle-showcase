@@ -28,7 +28,6 @@ import { SparklineComponent } from '../../shared/sparkline.component';
         </button>
       </div>
 
-      <!-- KPIs -->
       <div class="grid grid-cols-2 gap-3 xl:grid-cols-6">
         <div *ngFor="let k of kpis" class="card p-3.5">
           <div class="mb-2 flex items-center justify-between">
@@ -40,7 +39,6 @@ import { SparklineComponent } from '../../shared/sparkline.component';
         </div>
       </div>
 
-      <!-- Timeline -->
       <div class="card p-4">
         <div class="mb-4 text-sm font-semibold">Linha do tempo de implementação</div>
         <div class="grid gap-3 md:grid-cols-4">
@@ -60,7 +58,6 @@ import { SparklineComponent } from '../../shared/sparkline.component';
         </div>
       </div>
 
-      <!-- Novos tributos + substituídos -->
       <div class="grid gap-3 lg:grid-cols-[2fr_1fr]">
         <div class="card p-4">
           <div class="mb-3 text-sm font-semibold">Novos tributos</div>
@@ -85,7 +82,6 @@ import { SparklineComponent } from '../../shared/sparkline.component';
         </div>
       </div>
 
-      <!-- Charts -->
       <div class="grid gap-3 xl:grid-cols-3">
         <div class="card p-4">
           <div class="mb-3 text-sm font-semibold">Impacto estimado por setor</div>
@@ -99,7 +95,7 @@ import { SparklineComponent } from '../../shared/sparkline.component';
           <div class="mb-3 text-sm font-semibold">Evolução normativa</div>
           <svg viewBox="0 0 280 120" class="w-full">
             <g *ngFor="let b of normative; let i = index">
-              <rect [attr.x]="20 + i * 36" [attr.y]="100 - b.atos * 18" width="18" height="{{ b.atos * 18 }}" rx="3" fill="#2563eb" opacity="0.85"/>
+              <rect [attr.x]="20 + i * 36" [attr.y]="100 - b.atos * 18" width="18" [attr.height]="b.atos * 18" rx="3" fill="#2563eb" opacity="0.85"/>
             </g>
             <polyline fill="none" stroke="#10b981" stroke-width="2" [attr.points]="linePoints"/>
             <g *ngFor="let b of normative; let i = index">
@@ -113,12 +109,11 @@ import { SparklineComponent } from '../../shared/sparkline.component';
         </div>
       </div>
 
-      <!-- Bottom grid -->
       <div class="grid gap-3 xl:grid-cols-3">
         <div class="card p-4">
           <div class="mb-3 text-sm font-semibold">Perguntas frequentes</div>
           <div class="space-y-2">
-            <details *ngFor="let f of faqs; let i = index" class="rounded-lg border border-border bg-bg open:bg-bg-card-hover" [attr.open]="i === 0 ? '' : null">
+            <details *ngFor="let f of faqs; let i = index" class="rounded-lg border border-border bg-bg open:bg-bg-card-hover" [attr.open]="i === 0 ? true : null">
               <summary class="cursor-pointer px-3 py-2.5 text-xs font-medium text-text">{{ f.q }}</summary>
               <p class="border-t border-border px-3 py-2 text-xs text-text-muted">{{ f.a }}</p>
             </details>
@@ -205,18 +200,12 @@ export class ReformaPage {
   }
 
   riskColor(status: string): string {
-    switch (status) {
-      case 'amarelo':
-        return '#f59e0b';
-      case 'laranja':
-        return '#f97316';
-      case 'verde':
-        return '#10b981';
-      default: {
-        const _e: never = status as never;
-        return String(_e);
-      }
-    }
+    const colors: Record<string, string> = {
+      amarelo: '#f59e0b',
+      laranja: '#f97316',
+      verde: '#10b981',
+    };
+    return colors[status] ?? '#64748b';
   }
 }
 
