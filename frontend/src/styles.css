@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1120;
+  --bg-sidebar: #0a0f1a;
+  --bg-card: #111827;
+  --bg-card-hover: #152033;
+  --border: #1e293b;
+  --border-subtle: #1a2332;
+  --primary: #2563eb;
+  --primary-bright: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@layer components {
+  .card {
+    @apply rounded-[10px] border border-border bg-bg-card;
+  }
+
+  .kpi-value {
+    @apply font-mono text-[1.35rem] font-semibold tracking-tight text-text;
+  }
+
+  .muted {
+    @apply text-sm text-text-muted;
+  }
+
+  .dim {
+    @apply text-xs text-text-dim;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-bg-card px-3 py-2 text-sm font-medium text-text transition hover:bg-bg-card-hover;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-primary bg-primary px-3 py-2 text-sm font-medium text-white transition hover:bg-primary-bright;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center gap-1 rounded-md bg-success/15 px-2 py-0.5 text-xs font-medium text-success;
+  }
+
+  .badge-yellow {
+    @apply inline-flex items-center gap-1 rounded-md bg-warning/15 px-2 py-0.5 text-xs font-medium text-warning;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1 rounded-md bg-primary/15 px-2 py-0.5 text-xs font-medium text-primary-bright;
+  }
+
+  .progress-track {
+    @apply h-1.5 w-full overflow-hidden rounded-full bg-border;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-primary-bright;
+  }
+
+  .dot-green {
+    @apply inline-block h-2 w-2 rounded-full bg-success shadow-[0_0_0_3px_rgba(16,185,129,0.2)];
+  }
+}
