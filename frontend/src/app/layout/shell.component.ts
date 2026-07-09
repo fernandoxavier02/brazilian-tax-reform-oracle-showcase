@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NAV_ITEMS } from '../core/mock-data';
@@ -6,10 +6,9 @@ import { NAV_ITEMS } from '../core/mock-data';
 @Component({
   selector: 'app-shell',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink, RouterLinkActive],
+  imports: [NgFor, RouterLink, RouterLinkActive],
   template: `
     <div class="flex h-screen overflow-hidden bg-bg text-text">
-      <!-- Sidebar -->
       <aside class="flex w-sidebar shrink-0 flex-col border-r border-border bg-bg-sidebar">
         <div class="border-b border-border px-4 py-4">
           <div class="flex items-start gap-3">
@@ -65,7 +64,6 @@ import { NAV_ITEMS } from '../core/mock-data';
         </div>
       </aside>
 
-      <!-- Main -->
       <div class="flex min-w-0 flex-1 flex-col">
         <header class="flex h-14 shrink-0 items-center gap-4 border-b border-border bg-bg/80 px-5 backdrop-blur">
           <div class="relative min-w-0 flex-1">
@@ -117,26 +115,17 @@ export class ShellComponent {
   readonly nav = NAV_ITEMS;
 
   iconSvg(name: string): string {
-    const common = 'width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
-    switch (name) {
-      case 'chat':
-        return `<svg ${common}><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`;
-      case 'sources':
-        return `<svg ${common}><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`;
-      case 'index':
-        return `<svg ${common}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`;
-      case 'reforma':
-        return `<svg ${common}><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>`;
-      case 'metrics':
-        return `<svg ${common}><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`;
-      case 'export':
-        return `<svg ${common}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
-      case 'settings':
-        return `<svg ${common}><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
-      default: {
-        const _exhaustive: never = name as never;
-        return String(_exhaustive);
-      }
-    }
+    const common =
+      'width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+    const icons: Record<string, string> = {
+      chat: `<svg ${common}><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
+      sources: `<svg ${common}><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`,
+      index: `<svg ${common}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+      reforma: `<svg ${common}><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 4-6"/></svg>`,
+      metrics: `<svg ${common}><path d="M18 20V10M12 20V4M6 20v-6"/></svg>`,
+      export: `<svg ${common}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+      settings: `<svg ${common}><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`,
+    };
+    return icons[name] ?? '';
   }
 }
