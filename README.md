@@ -1,14 +1,14 @@
 # Brazilian Tax Reform Oracle — Showcase
 
 > **Tipo:** Vitrine técnica arquitetural  
-> **Status:** Sistema de produção proprietário · Esta vitrine contém protótipo educacional  
+> **Status:** Protótipo público educacional com dados sintéticos
 > **Autor:** Fernando Xavier  
 > **Domínio:** Direito Tributário Brasileiro · Reforma Tributária · RAG (Retrieval Augmented Generation)  
 > **Licença:** Proprietário — Todos os direitos reservados. Vitrine para avaliação de portfólio profissional apenas.
 
 ---
 
-*Como membro nomeado do Comitê Nacional de Reforma Tributária (CBS/IBS) da minha firma, concebi esta ferramenta de pesquisa para acelerar análises de impacto da reforma. Esta vitrine demonstra o domínio do problema e a abordagem — o sistema de produção é proprietário e confidencial.*
+*Esta vitrine demonstra, em um cenário sintético, como combinar recuperação de documentos, busca por similaridade e citações para apoiar pesquisas tributárias. Não representa um sistema de cliente nem publica resultados de produção.*
 
 ---
 
@@ -20,65 +20,57 @@ A **Reforma Tributária brasileira** (PEC 45/2019, promulgada em dezembro de 202
 - **CBS** — Contribuição sobre Bens e Serviços (federal, não-cumulativo)
 - **IS** — Imposto Seletivo (federal, sobre bens e serviços específicos)
 
-**O gap:** Advogados tributários, controllers e diretores fiscais precisam consultar **dezenas de fontes oficiais** (Planalto, Receita Federal, Senado, Câmara, STF, STJ) para responder perguntas como:
+**O gap:** Advogados tributários, controllers e diretores fiscais podem precisar consultar **dezenas de fontes oficiais** (Planalto, Receita Federal, Senado, Câmara, STF, STJ) para responder perguntas como:
 
 > *"Qual a alíquota de IBS para serviços de saúde no estado de São Paulo em 2026?"*
 > *"A CBS incide sobre exportações de serviços?"*
 > *"Quais bens estão sujeitos ao IS?"*
 
-Hoje, essa pesquisa leva **horas** e é propensa a erros por consulta a fontes desatualizadas ou não oficiais.
+Uma solução de recuperação com citações pode reduzir buscas dispersas e tornar a origem de cada resposta verificável.
 
 ---
 
 ## 🏗️ A Solução
 
-Sistema **RAG (Retrieval Augmented Generation)** com frontend Angular que permite consultas em linguagem natural sobre a Reforma Tributária, respondendo com **citações de fontes oficiais** e **interpretações fundamentadas**.
+Arquitetura **RAG (Retrieval Augmented Generation)** com frontend Angular para consultas em linguagem natural sobre a Reforma Tributária. A implementação pública é uma demonstração local com corpus sintético e citações simuladas.
 
 ### Funcionalidades Principais
 
 | Módulo | Descrição | Impacto |
 |---|---|---|
 | **Chat Inteligente** | Interface conversacional com histórico de threads | UX de ChatGPT com foco tributário |
-| **RAG Local** | Índice vetorial de documentos oficiais (sem envio para cloud) | 100% privacidade dos dados |
-| **Fontes Oficiais** | Planalto, Receita Federal, Senado, Câmara, STF, STJ | Zero alucinação em fonte |
+| **RAG Local** | Índice vetorial do corpus sintético da demonstração | Execução local no protótipo |
+| **Fontes Oficiais** | Referências a Planalto, Receita Federal, Senado, Câmara, STF e STJ | Origem indicada nas citações |
 | **Citações por Resposta** | Cada resposta inclui referência ao artigo/lei/fonte | Auditável e verificável |
-| **Multimodal** | Suporte a PDF, DOCX, HTML de sites oficiais | Todos os formatos de publicação |
-| **Fine-tuning** | Modelo ajustado para linguagem tributária brasileira | Precisão técnica superior |
-| **Exportação** | Respostas exportáveis para PDF e Word | Documentação de pareceres |
+| **Interface demonstrativa** | Chat, threads, telas de indexação e exportação | Fluxo visual navegável |
 
 ---
 
-## 📈 Resultados
+## 📈 Evidência pública
 
 ### Chat com Citações em Tempo Real
 ![Visão Geral da Reforma](assets/screenshots/01-visao-geral-reforma.png)
 
-### Pipeline RAG
+### Pipeline RAG (ilustrativo)
 ![Métricas de Confiança](assets/screenshots/02-metricas-confianca.png)
 
-### Dashboard de Indexação
+### Dashboard de Indexação (ilustrativo)
 ![Chat Inteligente](assets/screenshots/03-chat-inteligente.png)
 
-### Visão Geral da Reforma Tributária
+### Visão Geral da Reforma Tributária (ilustrativa)
 ![Dashboard de Indexação](assets/screenshots/04-dashboard-indexacao.png)
 
 
 
-> *Métricas baseadas em deployment em escritório de advocacia tributária de São Paulo.*
-
-| Métrica | Antes | Depois | Redução/Melhoria |
-|---|---|---|---|
-| **Tempo de pesquisa tributária** | 2-4 horas | 15 minutos | **92%** |
-| **Precisão de fontes citadas** | Estimativa | 100% verificável | **Qualitativo** |
-| **Custo por consulta** | R$ 800-1.500 (advogado) | R$ 0 (sistema) | **100%** |
-| **Satisfação do cliente** | N/A | 4.8/5.0 | **Qualitativo** |
-| **Tempo de onboarding de novos advogados** | 3 meses | 2 semanas | **83%** |
+O repositório oferece um protótipo executável, corpus sintético, busca com similaridade por tokens, respostas com citações e testes automatizados. Não há métricas de clientes, adoção ou desempenho de produção declaradas aqui.
 
 ---
 
 ## 🏛️ Arquitetura
 
 Consulte [ARCHITECTURE.md](./ARCHITECTURE.md) para diagramas detalhados.
+
+O diagrama abaixo é uma arquitetura de referência; o engine Python executável desta vitrine usa apenas a biblioteca padrão e dados sintéticos.
 
 ```
 ┌─────────────────┐         ┌─────────────────────────┐         ┌─────────────────┐
@@ -99,12 +91,11 @@ Consulte [ARCHITECTURE.md](./ARCHITECTURE.md) para diagramas detalhados.
 
 ---
 
-## 🧪 Protótipo Educacional
+## 🧪 Protótipo público
 
-Protótipo Python puro que demonstra o pipeline RAG com dados sintéticos de legislação:
+Protótipo Python puro que demonstra um pipeline RAG simplificado com dados sintéticos de legislação:
 - Document chunking
-- Embedding com sentence-transformers
-- Similarity search (FAISS-like pure Python)
+- Vetorização TF e similaridade de cosseno em Python padrão
 - Context assembly para LLM
 - Citation tracking
 
@@ -119,7 +110,7 @@ python main.py
 
 **© 2026 Fernando Xavier. Todos os direitos reservados.**
 
-O sistema de produção é **proprietário, licenciado comercialmente e confidencial**. Este repositório contém apenas documentação arquitetural de alto nível, narrativas sanitizadas, protótipo educacional com dados 100% fictícios e imagens geradas sinteticamente.
+Este repositório contém documentação arquitetural, uma interface demonstrativa, um protótipo educacional com dados sintéticos e imagens ilustrativas. Não há dados de clientes nem resultados de produção publicados.
 
 **Este projeto é uma demonstração técnica e educacional. As respostas geradas pelo sistema não constituem aconselhamento tributário, jurídico ou contábil.** Para decisões sobre a Reforma Tributária (CBS/IBS), consulte um profissional habilitado.
 
@@ -130,10 +121,9 @@ O sistema de produção é **proprietário, licenciado comercialmente e confiden
 <details>
 <summary><sub>Stack técnico (para avaliadores técnicos)</sub></summary>
 
+- **Backend do protótipo:** Python 3.11 + biblioteca padrão (vetorização TF e similaridade de cosseno)
+- **Arquitetura de referência:** LangChain, FAISS, Sentence Transformers e LLM local podem ser avaliados como extensões futuras; não fazem parte do engine Python atual
 - **Frontend:** Angular 17.3 + TypeScript 5.4 + RxJS 7.8 + Tailwind CSS
-- **Backend RAG:** Python 3.11 + LangChain + FAISS (vetorial local) + Sentence Transformers
-- **LLM:** Llama 3 (local via Ollama) — zero chamadas à nuvem
-- **Document Store:** SQLite + embeddings FAISS
 - **Containerização:** Docker
 
 </details>
@@ -142,9 +132,4 @@ O sistema de produção é **proprietário, licenciado comercialmente e confiden
 
 ## 📬 Contato
 
-**Fernando Xavier**  
-Head of Accounting & Controlling · Finance Executive & Founder @ FX Studio AI  
-CRC · ACCA Cert IFR · FMVA (CFI) · MBA Engenharia de Soluções com IA (USP/Esalq, em andamento)  
-São Paulo, BR · PT / EN (C2) / ES (C1)  
-
-[LinkedIn](https://linkedin.com/in/fernandoxavier02) · contato@fxstudioai.com · [fxstudioai.com](https://fxstudioai.com)
+[LinkedIn](https://linkedin.com/in/fernandoxavier02) · [FX Studio AI](https://fxstudioai.com)
